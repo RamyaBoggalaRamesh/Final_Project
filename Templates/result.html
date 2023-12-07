@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+</head>
+<style>
+    img {
+        background-color: blue;
+    }
+</style>
+<body>
+    <h1>{{ column_name }} Prediction Result</h1>
+
+    <p>Mean Squared Error: {{ error_mse }}</p>
+    <p>Symmetric Mean Absolute Percentage Error: {{ error_smape }}</p>
+
+    <!-- Display the plot using an img tag with base64-encoded data -->
+    <img src="data:image/png;base64,{{ plot_data }}" alt="{{ column_name }} Prediction">
+
+</body>
+</html>

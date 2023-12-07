@@ -1,0 +1,21 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flask Input Example</title>
+</head>
+<body>
+    <h1>Choose Column for Prediction From CSV File</h1>
+    <form action="/result" method="post">
+        <label for="column_input">Select Column:</label>
+        <select id="column_input" name="column_input" required>
+            {% for column in columns %}
+                <option value="{{ column }}">{{ column }}</option>
+            {% endfor %}
+        </select>
+        <button type="predict">predict</button>
+    </form>
+</body>
+</html>
